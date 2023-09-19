@@ -1,10 +1,10 @@
-package main
+package server
 
 import (
 	"bytes"
-	"hw_1/internal/server"
 	"net/http"
 	"net/http/httptest"
+	"os"
 	"testing"
 )
 
@@ -16,7 +16,7 @@ func TestCheckReplaceHandlerUnsuccessfulMethod(t *testing.T) {
 	}
 
 	w := httptest.NewRecorder()
-	server.Replace(w, req)
+	Replace(w, req)
 
 	if w.Code != http.StatusBadGateway {
 		t.Errorf("Expected status code %d, got %d", http.StatusBadGateway, w.Code)
@@ -36,7 +36,7 @@ func TestCheckGetHandlerUnsuccessfulMethod(t *testing.T) {
 	}
 
 	w := httptest.NewRecorder()
-	server.Get(w, req)
+	Get(w, req)
 
 	if w.Code != http.StatusBadGateway {
 		t.Errorf("Expected status code %d, got %d", http.StatusBadGateway, w.Code)
@@ -50,6 +50,11 @@ func TestCheckGetHandlerUnsuccessfulMethod(t *testing.T) {
 }
 
 func TestCheckBothHandler(t *testing.T) {
+	err := os.Chdir("../..")
+	if err != nil {
+		return
+	}
+
 	requestBody := []byte(`{"body":"568gtgfggfgt676"}`)
 	reqReplace, err := http.NewRequest(http.MethodPut, "/replace", bytes.NewBuffer(requestBody))
 	if err != nil {
@@ -57,7 +62,7 @@ func TestCheckBothHandler(t *testing.T) {
 	}
 
 	wReplace := httptest.NewRecorder()
-	server.Replace(wReplace, reqReplace)
+	Replace(wReplace, reqReplace)
 
 	if wReplace.Code != http.StatusOK {
 		t.Errorf("Expected status code %d, got %d", http.StatusOK, wReplace.Code)
@@ -75,7 +80,7 @@ func TestCheckBothHandler(t *testing.T) {
 	}
 
 	wGet := httptest.NewRecorder()
-	server.Get(wGet, reqGet)
+	Get(wGet, reqGet)
 
 	if wGet.Code != http.StatusOK {
 		t.Errorf("Expected status code %d, got %d", http.StatusOK, wGet.Code)

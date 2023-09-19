@@ -28,8 +28,8 @@ func Replace(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadGateway)
 	}
 
-	if err := os.WriteFile("../../internal/server/input_body.txt", []byte(newBody.Body), 0777); err != nil {
-		w.WriteHeader(http.StatusNotFound)
+	if err := os.WriteFile("internal/server/input_body.txt", []byte(newBody.Body), 0777); err != nil {
+		w.WriteHeader(http.StatusBadGateway)
 		return
 	}
 
@@ -51,7 +51,7 @@ func Get(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	file, err := os.ReadFile("../../internal/server/input_body.txt")
+	file, err := os.ReadFile("internal/server/input_body.txt")
 	if err != nil {
 		return
 	}
