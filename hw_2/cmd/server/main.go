@@ -1,10 +1,9 @@
 package main
 
 import (
-	"hw_1/internal/server"
+	"hw_2/internal/server"
 )
 
 func main() {
 	server.StartServer()
-
 }
