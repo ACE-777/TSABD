@@ -16,7 +16,7 @@ cd internal/server
 go test
 ```
 
-# Hw 1
+# Hw 2
 
 ```bash
 cd hw_2
