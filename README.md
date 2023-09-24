@@ -3,7 +3,7 @@
 # Hw 1
 
 ```bash
-cd cmd
+cd hw_1
 ```
 запуск servochka:
 ```bash
@@ -15,3 +15,16 @@ go run cmd/server/main.go
 cd internal/server
 go test
 ```
+
+# Hw 1
+
+```bash
+cd hw_2
+```
+запуск servochka:
+```bash
+go run cmd/server/main.go
+```
+
+Журанлы транзакции находятся в ``` hw_2/internal/logs```.
+Снэпшот хранится в переменной ```snapshot```
