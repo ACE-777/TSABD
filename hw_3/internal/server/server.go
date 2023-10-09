@@ -22,7 +22,7 @@ var (
 
 	clock map[string]uint64
 
-	source = "Дягилев"
+	source = "Diagilev"
 
 	peers []string
 )
@@ -58,7 +58,7 @@ func replace(w http.ResponseWriter, r *http.Request) {
 		wg.Done()
 	}()
 
-	if err := os.WriteFile("internal\\server\\input_body.txt", []byte(newTransaction.Payload), 0777); err != nil {
+	if err := os.WriteFile("internal/server/input_body.txt", []byte(newTransaction.Payload), 0777); err != nil {
 		w.WriteHeader(http.StatusConflict)
 		return
 	}
@@ -88,6 +88,7 @@ func get(w http.ResponseWriter, r *http.Request) {
 	//}
 	//
 	//_, err = w.Write(file)
+
 	_, err := w.Write([]byte(snap))
 	if err != nil {
 		w.WriteHeader(http.StatusBadGateway)
@@ -123,7 +124,9 @@ func vClock(w http.ResponseWriter, r *http.Request) {
 }
 
 func ws(w http.ResponseWriter, r *http.Request) {
-
+	//ws- это websocket handler, по которому мы отправляем транзакции,
+	// а надо еще в отдельной горутине поднять клиента для принятия от всех peer-ов транзакции. То есть для каждого
+	//другого пира нужна горутина с клиентом
 }
 
 func StartServer() {

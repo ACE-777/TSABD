@@ -19,7 +19,8 @@ func makeLog(version int) {
 		}
 
 		clock[inputTransaction.Source]++
-		patch, err := jsonpatch.DecodePatch([]byte(inputTransaction.Payload))
+		fmt.Println("input", inputTransaction.Payload)
+		patch, err := jsonpatch.DecodePatch([]byte("[" + inputTransaction.Payload + "]"))
 		if err != nil {
 			fmt.Printf("error in decoding patch: %v", err)
 		}
@@ -30,6 +31,7 @@ func makeLog(version int) {
 		}
 
 		snap = string(modified)
+		fmt.Println("actual snap", string(snap))
 		wal = append(wal, inputTransaction)
 
 		if inputTransaction.Source == source {

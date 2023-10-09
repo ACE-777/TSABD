@@ -16,3 +16,65 @@
 [{'op':'replace', 'path': '/0', 'value': []}]
 [{'op':'replace', 'path': '/0', 'value': []}]
 [{'op':'add', 'path': '/0/-', 'value': 'Hello'}]
+[{'op':'replace', 'path': '/0', 'value': []}]
+[{'op':'replace', 'path': '//0', 'value': []}]
+[{'op':'replace', 'path': '0', 'value': []}]
+[{'op':'replace', 'path': '\0', 'value': []}]
+[{'op':'replace', 'path': '/0', 'value': []}]
+[{'op':'replace', 'path': '/0', 'value': []}]
+[{'op':'add', 'path': '/0/-', 'value': 'Hello'}]
+[{'op':'replace', 'path': '/0', 'value': []}]
+[{'op':'add', 'path': '/0/-', 'value': 'Hello'}]
+[{'op':'replace', 'path': '/0', 'value': []}]
+[{'op':'add', 'path': '/0/-', 'value': 'Hello'}]
+[{'op':'replace', 'path': '/0', 'value': []}]
+[{'op':'replace', 'path': '/0', 'value': []}]
+[{'op':'replace', 'path': '/0', 'value': []}]
+[{'op':'replace', 'path': '/0', 'value': []}]
+[{'op':'replace', 'path': '/0', 'value': []}]
+[{'op':'replace', 'path': '/0', 'value': []}]
+[{'op':'add', 'path': '/0/-', 'value': 'Hello'}]
+[{'op':'add', 'path': '/0/-', 'value': 'Hello'}]
+{ 'op': 'add', 'path': '/hello', 'value': ['world'] }
+{ 'op': 'add', 'path': '/hello', 'value': [world] }
+{ 'op': 'add', 'path': '/hello', 'value': 'world' }
+{'op': 'add', 'path': '/hello', 'value': 'world'}
+{'op': 'add', 'path': '/hello', 'value': 'world'}
+{'op': 'add', 'path': '/hello', 'value': { 'name': 'Ginger Nut' }
+{'op': 'add', 'path': '/hello', 'value': { 'name': 'Ginger Nut' }}
+{'op': 'add', 'path': '/hello', 'value': { 'name': 'Ginger Nut' }}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+[{"op":"add", "path": "/0/-", "value": "Hello"}]
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+[{"op":"add", "path": "/0/-", "value": "Hello"}]
+[{"op":"add", "path": "/0/-", "value": "Hello"}]
+{"op":"add", "path": "/0/-", "value": "Hello"}
+[{"op":"add", "path": "/0/-", "value": "Hello"}]
+[{"op":"add", "path": "/0/-", "value": "Hello"}]
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+[{"op":"add", "path": "/0/-", "value": "Hello"}]
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op":"add", "path": "/0/-", "value": "Hello"}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}
+{'op':'replace', 'path': '/0', 'value': []}
+{"op":"replace", "path": "/0", "value": []}
+{"op":"replace", "path": "/0", "value": []}
+{"op":"replace", "path": "/0", "value": {}}
+{"op":"replace", "path": "/0", "value": {}}
+{"op":"add", "path": "/0", "value": {}}
+{"op":"add", "path": "/0", "value": {}}
+{"op":"add", "path": "/0", "value": "hello"}
