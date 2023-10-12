@@ -2,23 +2,29 @@ package server
 
 import (
 	"fmt"
-	jsonpatch "github.com/evanphx/json-patch/v5"
 	"os"
 	"strconv"
+
+	jsonpatch "github.com/evanphx/json-patch/v5"
 )
 
 func makeLog(version int) {
 	for {
 		inputTransaction := <-transactionManagerGlobal
-		if inputTransaction.Source == source {
-			IDTransaction++
+		if inputTransaction.Source == source && inputTransaction.Id >= IDTransaction {
+			IDTransaction = inputTransaction.Id - IDTransaction
+		}
+
+		_, ok := clock[inputTransaction.Source]
+		if !ok {
+			clock[inputTransaction.Source] = -1
 		}
 
 		if clock[inputTransaction.Source] > inputTransaction.Id && inputTransaction.Source != source {
 			continue
 		}
 
-		clock[inputTransaction.Source]++
+		clock[inputTransaction.Source] = inputTransaction.Id
 		fmt.Println("input", inputTransaction.Payload)
 		patch, err := jsonpatch.DecodePatch([]byte("[" + inputTransaction.Payload + "]"))
 		if err != nil {
@@ -68,18 +74,4 @@ func makeLog(version int) {
 		}
 
 	}
-}
-
-func applyJSONPatch(sourceJSON []byte, ops []jsonpatch.Operation) ([]byte, error) {
-	document, err := jsonpatch.DecodePatch(sourceJSON)
-	if err != nil {
-		return nil, err
-	}
-
-	patchedJSON, err := document.Apply(sourceJSON)
-	if err != nil {
-		return nil, err
-	}
-
-	return patchedJSON, nil
 }
