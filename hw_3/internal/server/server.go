@@ -117,7 +117,7 @@ func test(w http.ResponseWriter, r *http.Request) {
 }
 
 func vClock(w http.ResponseWriter, r *http.Request) {
-	out := ""
+	out := "\n"
 	for key, value := range clock {
 		out = out + key + " " + strconv.Itoa(int(value)) + "\n"
 	}
@@ -159,7 +159,7 @@ func StartServer() {
 	timer = time.NewTimer(10 * time.Minute)
 	transactionManagerGlobal = make(chan input)
 	go makeLog(1)
-	peers = append(peers, "127.0.0.1:6060", "127.0.0.1:6061")
+	peers = append(peers, "127.0.0.1:8080", "127.0.0.1:8081")
 	makeNetBetweenPeers(peers)
 
 	http.HandleFunc("/replace", replace)
@@ -168,7 +168,17 @@ func StartServer() {
 	http.HandleFunc("/vclock", vClock)
 	http.HandleFunc("/ws", ws)
 
-	if err := http.ListenAndServe(":8080", nil); err != nil {
-		return
-	}
+	go func() {
+		if err := http.ListenAndServe(":8080", nil); err != nil {
+			fmt.Println("error on 8080:", err)
+		}
+	}()
+
+	go func() {
+		if err := http.ListenAndServe(":8081", nil); err != nil {
+			fmt.Println("error on:", err)
+		}
+	}()
+
+	time.Sleep(300 * time.Second)
 }

@@ -17,7 +17,7 @@ func makeLog(version int) {
 
 		_, ok := clock[inputTransaction.Source]
 		if !ok {
-			clock[inputTransaction.Source] = -1
+			clock[inputTransaction.Source] = 0
 		}
 
 		if clock[inputTransaction.Source] > inputTransaction.Id && inputTransaction.Source != source {
@@ -39,7 +39,6 @@ func makeLog(version int) {
 		snap = string(modified)
 		fmt.Println("actual snap", string(snap))
 		wal = append(wal, inputTransaction)
-
 		if inputTransaction.Source == source {
 			f, err := os.OpenFile("internal/logs/transaction_log_"+strconv.Itoa(version)+".txt",
 				os.O_APPEND|os.O_WRONLY, 0777)

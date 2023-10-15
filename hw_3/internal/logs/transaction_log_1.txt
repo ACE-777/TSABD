@@ -78,3 +78,30 @@
 {"op":"add", "path": "/0", "value": {}}
 {"op":"add", "path": "/0", "value": {}}
 {"op":"add", "path": "/0", "value": "hello"}
+{"op":"add", "path": "/0", "value": "hello"}
+{"op":"add", "path": "/0", "value": "hello"}
+{"op":"add", "path": "/0/-", "value": "Hello"}
+{"op":"add", "path": "/0", "value": "hello"}
+{"op":"add", "path": "/0/-", "value": "Hello"}
+{"op":"add", "path": "/0", "value": "hello"}
+{"op":"add", "path": "/0/-", "value": "Hello"}
+{"op":"add", "path": "/0", "value": "hello"}
+{"op":"add", "path": "/0", "value": "hello"}
+{"op":"add", "path": "/0", "value": "hello"}
+{"op":"add", "path": "/0", "value": "hello"}
+{"op":"add", "path": "/0/-", "value": "Hello"}
+[{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}]
+{"op":"add", "path": "/0", "value": "hello"}
+{"op":"add", "path": "/0/-", "value": "Hello"}
+{"op":"add", "path": "/0", "value": "hello"}
+[{"op": "add", "path": "/hello", "value": {"name": "Ginger Nut"}}]
+{"op":"add", "path": "/0", "value": "hello"}
+{"op":"add", "path": "/1", "value": "hello"}
+{"op":"add", "path": "/2", "value": "hello"}
+{"op":"add", "path": "/3", "value": "hello"}
+{"op":"add", "path": "/3", "value": "hello"}
+{"op":"add", "path": "/0", "value": "hello"}
+{"op":"add", "path": "/0/-", "value": "Hello"}
+{"op":"add", "path": "/0/-", "value": "Hello"}
+{"op":"add", "path": "/Diagilev/-", "value": "Hello"}
+{"op": "remove", "path": "/Diagilev"}
